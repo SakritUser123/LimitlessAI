@@ -4,15 +4,15 @@ A modern, full-stack AI-powered food tracking application built with Next.js 15,
 
 ## Features
 
-- 📸 **AI Meal Scanner** - Upload food photos and get instant calorie + macro analysis with GPT-4 Vision
-- 📊 **Smart Dashboard** - Real-time tracking with beautiful charts and progress visualization  
-- 🍽️ **Meal History** - Categorized meal logs with search, filter, and edit capabilities
-- 👤 **User Profile** - Personal metrics, dietary preferences, and goal tracking
-- 📈 **Advanced Analytics** - Weekly/monthly trends, macro distribution, nutrition insights
-- 🔐 **Secure Authentication** - Clerk with multi-factor auth and social login
-- 📱 **Mobile Responsive** - Premium mobile-first design with Tailwind CSS + shadcn/ui
-- ✨ **Smooth Animations** - Framer Motion for delightful interactions
-- 🌙 **Dark Mode** - Built-in dark/light theme support
+-  **AI Meal Scanner** - Upload food photos and get instant calorie + macro analysis with GPT-4 Vision
+-  **Smart Dashboard** - Real-time tracking with beautiful charts and progress visualization  
+-  **Meal History** - Categorized meal logs with search, filter, and edit capabilities
+-  **User Profile** - Personal metrics, dietary preferences, and goal tracking
+-  **Advanced Analytics** - Weekly/monthly trends, macro distribution, nutrition insights
+-  **Secure Authentication** - Clerk with multi-factor auth and social login
+-  **Mobile Responsive** - Premium mobile-first design with Tailwind CSS + shadcn/ui
+-  **Smooth Animations** - Framer Motion for delightful interactions
+-  **Dark Mode** - Built-in dark/light theme support
 
 ## Tech Stack
 
