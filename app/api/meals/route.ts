@@ -4,7 +4,9 @@ import { supabaseServer } from '@/lib/supabase';
 
 export async function GET(request: NextRequest) {
   try {
-    const { userId } = auth();
+    const session = await auth();
+    const userId = session?.userId;
+
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -30,7 +32,10 @@ export async function GET(request: NextRequest) {
         .lt('created_at', endDate.toISOString());
     }
 
-    const { data: meals, error } = await query.range(offset, offset + limit - 1);
+    const { data: meals, error } = await query.range(
+      offset,
+      offset + limit - 1
+    );
 
     if (error) {
       throw error;
@@ -48,7 +53,9 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const { userId } = auth();
+    const session = await auth();
+    const userId = session?.userId;
+
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
