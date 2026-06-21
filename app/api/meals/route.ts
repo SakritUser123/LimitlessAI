@@ -11,9 +11,13 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // 🔥 extract id manually from URL (avoids Next.js params typing issue)
-    const url = new URL(request.url);
-    const id = url.pathname.split('/').pop();
+    
+    const { pathname } = request.nextUrl;
+    const id = pathname.split('/').pop();
+
+    if (!id) {
+      return NextResponse.json({ error: 'Missing id' }, { status: 400 });
+    }
 
     const { data, error } = await supabaseServer
       .from('meals')
