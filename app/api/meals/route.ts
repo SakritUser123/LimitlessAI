@@ -2,7 +2,7 @@ import { auth } from '@clerk/nextjs/server';
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseServer } from '@/lib/supabase';
 
-export async function GET(request: NextRequest, context: any) {
+export async function GET(request: NextRequest) {
   try {
     const session = await auth();
     const userId = session?.userId;
@@ -11,7 +11,9 @@ export async function GET(request: NextRequest, context: any) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const id = context?.params?.id;
+    // 🔥 extract id manually from URL (avoids Next.js params typing issue)
+    const url = new URL(request.url);
+    const id = url.pathname.split('/').pop();
 
     const { data, error } = await supabaseServer
       .from('meals')
