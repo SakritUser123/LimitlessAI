@@ -1,7 +1,6 @@
 {
   "name": "limitlessai-pro",
   "version": "1.0.0",
-  "private": true,
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "framework": "nextjs",
