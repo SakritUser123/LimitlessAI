@@ -32,7 +32,7 @@ export function MealScanner() {
       });
 
       if (response.ok) {
-        const result = await response.json();
+        await response.json();
         // Reload meals list
         window.location.reload();
       } else {

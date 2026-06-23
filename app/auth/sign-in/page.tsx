@@ -21,7 +21,7 @@ export default async function SignInPage() {
         }}
         redirectUrl="/dashboard"
         fallbackRedirectUrl="/dashboard"
-        providers={[]}
+        
       />
     </div>
   );

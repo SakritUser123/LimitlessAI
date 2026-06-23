@@ -2,7 +2,7 @@ import { auth } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 import { supabaseServer } from '@/lib/supabase';
 
-export async function GET(request: Request, context: any) {
+export async function GET(_: any, context: any) {
   const session = await auth();
   const userId = session?.userId;
 
@@ -10,7 +10,7 @@ export async function GET(request: Request, context: any) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const id = context?.params?.id;
+  const id = context.params.id;
 
   const { data, error } = await supabaseServer
     .from('meals')
@@ -25,4 +25,3 @@ export async function GET(request: Request, context: any) {
 
   return NextResponse.json(data);
 }
-

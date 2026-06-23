@@ -1,9 +1,9 @@
 import { auth, clerkClient } from '@clerk/nextjs/server';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { supabaseServer } from '@/lib/supabase';
 import { DEFAULT_GOALS, extractGoalsFromMetadata } from '@/lib/goals';
 
-export async function GET() {
+export async function GET(){
   try {
     const session = await auth();
     const { userId } = session;

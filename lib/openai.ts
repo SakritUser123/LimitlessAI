@@ -1,4 +1,4 @@
-const EDEN_AI_API_KEY = process.env.EDEN_AI_API_KEY;
+
 
 // Comprehensive nutrition database for various foods
 const FOOD_DATABASE: Record<string, any> = {

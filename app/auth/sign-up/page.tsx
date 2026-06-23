@@ -21,7 +21,7 @@ export default async function SignUpPage() {
         }}
         redirectUrl="/dashboard"
         fallbackRedirectUrl="/dashboard"
-        providers={[]}
+        
       />
     </div>
   );
