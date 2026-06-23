@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { supabaseServer } from '@/lib/supabase';
 import { DEFAULT_GOALS, extractGoalsFromMetadata } from '@/lib/goals';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const session = await auth();
     const { userId } = session;
