@@ -67,7 +67,7 @@ export default function MealScannerPage() {
   const [success, setSuccess] = useState('');
   const [detectedFoods, setDetectedFoods] = useState<string[]>([]);
   const [editingFoods, setEditingFoods] = useState(false);
-  const [mealType, setMealType] = useState<'breakfast' | 'lunch' | 'dinner' | 'snack'>('lunch');
+  const [mealType] = useState<'breakfast' | 'lunch' | 'dinner' | 'snack'>('lunch');
 
   const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
