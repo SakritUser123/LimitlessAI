@@ -1,8 +1,11 @@
 import { auth } from '@clerk/nextjs/server';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { supabaseServer } from '@/lib/supabase';
 
-export async function GET(request: NextRequest) {
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
   try {
     const session = await auth();
     const userId = session?.userId;
@@ -11,13 +14,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    
-    const { pathname } = request.nextUrl;
-    const id = pathname.split('/').pop();
-
-    if (!id) {
-      return NextResponse.json({ error: 'Missing id' }, { status: 400 });
-    }
+    const id = params.id;
 
     const { data, error } = await supabaseServer
       .from('meals')
