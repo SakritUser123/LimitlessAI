@@ -3,14 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        - npm ci
     build:
       commands:
         - npm run build
-  env:
-    variables:
-      CLERK_SECRET_KEY: sk_live_TIB5CWdJbjHGIaT2sBNWVhDCNZf9vs7fIVbrJnsDeK
-      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_live_Y2xlcmsuZDNkbmJhM3ZqejZwYjAuYW1wbGlmeWFwcC5jb20k
   artifacts:
     baseDirectory: .next
     files:
